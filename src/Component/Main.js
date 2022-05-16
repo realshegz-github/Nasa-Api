@@ -50,7 +50,7 @@ const Main = () => {
           data.map((item, index) => (
             <div className="card-container" key={item.id}>
               <Link to={`/image/${item.id}`}>
-                <img src={item.img_src} alt="card-pics" width={300} />
+                <img src={item.img_src} alt="card-pics" width={300} height={200}/>
               </Link>
               <div className="card-details">
                 <span className="camera-name">{item.camera.name}</span>

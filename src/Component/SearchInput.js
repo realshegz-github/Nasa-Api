@@ -55,7 +55,7 @@ const SearchInput = () => {
           search
         </button>
       </form>
-      <Query Data={data}/> 
+      {/* <Query Data={data}/>  */}
     </div>
   );
 };

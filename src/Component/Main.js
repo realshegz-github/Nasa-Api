@@ -66,28 +66,6 @@ const Main = () => {
               </div>
             </div>
           ))}
-        {/* <div className="card-container">
-          {data &&
-            data.map((item) => (
-              <>
-                <Link to={`/image/${item.id}`} key={item.id}>
-                  <img src={item.img_src} alt="card-pics" width={300} />
-                </Link>
-                <div className="card-details">
-                  <span className="camera-name">{item.camera.name}</span>
-                  <span className="earth-date">{item.earth_date}</span>
-                </div>
-              </>
-            ))}
-          <div className="toggle-like">
-            <button
-              className={toggleBtn ? "like-btn" : "dislike-btn"}
-              onClick={handleBtn}
-            >
-              <span>{toggleBtn ? <GrDislike /> : <GrLike />}</span>
-            </button>
-          </div>
-        </div> */}
       </div>
     </>
   );

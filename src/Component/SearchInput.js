@@ -3,9 +3,9 @@ import axios from "axios";
 import "../styles/SearchInput.css";
 import Query from "../Pages/Query";
 // eslint-disable-next-line react-hooks/rules-of-hooks
-const SearchInput = () => {
+const SearchInput = ({setData}) => {
   const [date, setDate] = useState("");
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
   const [camera, setCamera] = useState("");
   console.log(camera);
   const filterApi = `https://api.nasa.gov/mars-photos/api/v1/rovers/opportunity/photos?api_key=TGC91gcCla8qhfS6CwvPpTKkKZBAM2ftcLqkdFVG&earth_date=${date}&camera=${camera}`;
@@ -14,7 +14,8 @@ const SearchInput = () => {
     e.preventDefault()
     axios.get(filterApi)
       .then((response) => {
-        setData(response.data)
+        setData(response.data.photos)
+        // console.log(response.data)
       })
       .catch((error) => {
         console.log(error);

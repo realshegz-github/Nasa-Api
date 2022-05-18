@@ -8,8 +8,6 @@ import SearchInput from "./SearchInput";
 import Card from "./Card";
 const Main = () => {
   const [apiData, setApiData] = useState([]);
-  //  const [data, setData] = useState([]);
-  // const [toggleBtn, setToggleBtn] = useState(false);
 
   const earthDateApi =
     "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2016-6-3&api_key=TGC91gcCla8qhfS6CwvPpTKkKZBAM2ftcLqkdFVG";
@@ -24,10 +22,6 @@ const Main = () => {
         console.log(err);
       });
   }, []);
-  // const data = apiData.photos;
-
-  // console.log(data);
-  
 
   return (
     <>
@@ -41,15 +35,16 @@ const Main = () => {
           <Link to="/">NASA~API</Link>
         </div>
         <div className="searchbar">
-          <SearchInput setData={setApiData}/>
+          <SearchInput setData={setApiData} />
         </div>
       </div>
 
       <div className="card-wrapper">
-        {
-          apiData?.map((item) => (
-            <Card item={item}/>
-          ))}
+        {apiData.length === 0 ? (
+          <h1>No photos available</h1>
+        ) : (
+          apiData.map((item) => <Card item={item} />)
+        )}
       </div>
     </>
   );

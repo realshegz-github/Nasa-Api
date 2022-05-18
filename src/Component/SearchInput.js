@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "../styles/SearchInput.css";
-import Query from "../Pages/Query";
+
 // eslint-disable-next-line react-hooks/rules-of-hooks
 const SearchInput = ({setData}) => {
   const [date, setDate] = useState("");
